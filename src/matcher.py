@@ -69,5 +69,14 @@ def main():
         if match_final[i] != -1:
             print(i + 1, match_final[i] + 1)
 
+    file_name = input_filepath.split("/")[-1]
+    output_name = file_name.replace(".in", ".out")
+    output_path = f"data/{output_name}"
+
+    with open(output_path, "w") as f:
+        for i in range(n):
+            if match_final[i] != -1:
+                f.write(f"{i + 1} {match_final[i] + 1}\n")
+
 if __name__ == "__main__":
     main()
