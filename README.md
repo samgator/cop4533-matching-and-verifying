@@ -18,14 +18,14 @@ To run the verifier and check for stability, use a command in the terminal like 
 
 ## Any assumptions (input/output format, dependencies, etc.).
 - Input:
-It is assumed that line one of input files contain n, where the next n lines is the preference list for hospitals where the 
+The matcher and verifier both assume that line one of input files contain n, where the next n lines is the preference list for hospitals where the 
 ranks are seperated by a single space and different hospitals are seperated by a new line. The next n lines after that 
-are a preferences list for students following the same formatting. Preference lists are assumed to be a complete permutation from 1 to n 
+are a preferences list for students following the same formatting. Preference lists are assumed to be a complete permutation from 1 to n. Verifier.py also assumes that matcher.py is both located and available in the same directory.
 - Output:
 It is assumed that matcher has write permission to the /data folder, where it will output a file containing lines that represent
 each pair like so: 
-HospitalID StudentID
-The verifier assumes that input data is in the same format expected by matcher.py and that matcher.py is located and available in the same directory. Additionally, it assumes that a stable match is defined as there being no blocking pairs, where a blocking pair is any (H,S) who both prefer
+HospitalID StudentID.
+The verifier assumes that a stable match is defined as there being no blocking pairs, where a blocking pair is any (H,S) who both prefer
 each other over their currently assigned partners.
 The algorithm is hospital proposing, so in cases where multiple stable matchings are possible the hospital optimal result is produced
 - verfier.py is dependent on matcher.py, and plot.py is dependent on matplotlib.
