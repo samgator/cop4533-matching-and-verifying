@@ -66,6 +66,10 @@ def main():
     if n == 0:
         print("n=0, nothing to match!")
         return
+    for p_list in hospital_prefs + student_prefs:
+        if len(p_list) != n:
+            print("Error: Invalid input, number of hospitals and students must be even and preference list must be full")
+            return
 
     # Prints for debugging (to be removed)
     print("n =", n)
