@@ -22,11 +22,11 @@ Output:
 It is assumed that matcher has write permission to the /data folder, where it will output a file containing lines that represent
 each pair like so: 
 HospitalID StudentID
-The verifier assumes that a stable match means there are no blocking pairs, where a blocking pair is any (H,S) who both prefer
-eachother over their currently assigned partners.
+The verifier assumes that input data is in the same format expected by matcher.py and that matcher.py is located and available in the same directory. Additionally, it assumes that a stable match is defined as there being no blocking pairs, where a blocking pair is any (H,S) who both prefer
+each other over their currently assigned partners.
 The algorithm is hospital proposing, so in cases where multiple stable matchings are possible the hospital optimal result is produced
 
 Your graph and solution to Task C.
-The graphs are located in the data folder labeled matcher_runtime_plot.ong and verifier_runtime_plot.png.
-The solution to part C was to generate tests of vastly varying sizes using scripts, then benchmark ran the tests and wrote out 
-data regarding run time, and then finally plot used the results from benchmark to actually create the graphs 
+The graphs are located in the graphs folder labeled matcher_runtime_plot.png and verifier_runtime_plot.png.
+The solution to part C was to generate tests of vastly varying sizes using the testcase_generator.py script, then benchmark.py ran and timed the tests and wrote out 
+data regarding run time, and then finally plot.py used the results from benchmark to actually create and save the graphs.

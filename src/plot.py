@@ -14,7 +14,7 @@ plt.plot(iterations, times, marker="o")
 plt.xlabel("n (input size)")
 plt.ylabel("Runtime (seconds)")
 plt.title("Matcher Runtime vs Input Size")
-plt.savefig("../data/matcher_runtime_plot.png", dpi=300)
+plt.savefig("../graphs/matcher_runtime_plot.png", dpi=300)
 plt.show()
 iterations = []
 times = []
@@ -30,6 +30,6 @@ plt.plot(iterations, times, marker="o")
 plt.xlabel("n (input size)")
 plt.ylabel("Runtime (seconds)")
 plt.title("Verifier Runtime vs Input Size")
-plt.savefig("../data/verifier_runtime_plot.png", dpi=300)
+plt.savefig("../graphs/verifier_runtime_plot.png", dpi=300)
 plt.show()
 
