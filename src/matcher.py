@@ -2,9 +2,14 @@ import sys
 
 # Function to read input from a file and parse it into structured data
 def get_input(filename):
+
     with open(filename) as f:
-        n = int(f.readline().strip())
-    
+        first_line = f.readline().strip()
+        if not first_line:
+            return None, None, None
+        n = int(first_line)
+        if n == 0:
+            return 0, [], []
         # Read hospital and student preferences n times each
         hospital_preferences = []
         for _ in range(n):
@@ -55,14 +60,18 @@ def main():
     input_filepath = sys.argv[1]
     n, hospital_prefs, student_prefs = get_input(input_filepath)
 
+    if n is None:
+        print("Invalid Input File")
+        return
+    if n == 0:
+        print("n=0, nothing to match!")
+        return
+
     # Prints for debugging (to be removed)
     print("n =", n)
     print("Hospital preferences:", hospital_prefs)
     print("Student preferences:", student_prefs)
 
-    if n == 0:
-        return
-    
     match_final = gale_shapely(n, hospital_prefs, student_prefs)
 
     for i in range(n):
